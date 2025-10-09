@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <!--INCORPORACION DE BOOTSTRAP-->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#welcome-section">Kevin Llanos</a>
+    <button class="navbar-toggler bg-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#welcome-section">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" id="profile-link" href="https://www.freecodecamp.org/espanol/KevinLlanosTEC6" target="_blank">FreeCodeCamp</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <section id="welcome-section">
+        <h1>Kevin Llanos</h1>
+        <p>Técnico en Informática</p>
+    </section>
+    <section id="projects">
+        <h2>Mis Proyectos</h2>
+        <div class="project-container">
+            <div class="project-tile">
+                <a href="https://www.freecodecamp.org/espanol/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form" target="_blank">
+                    <p>Encuesta</p>
+                    <img src="https://i.postimg.cc/9Frrkhdb/imagen-2025-08-03-024909869.png" alt="Encuesta">
+                </a>
+            </div>
+            <div class="project-tile">
+                <a href="https://www.freecodecamp.org/espanol/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page" target="_blank">
+                    <p>Tributo</p>
+                    <img src="https://i.postimg.cc/HnKsmrw2/Locomotora.png" alt="Tributo">
+                </a>
+            </div>
+            <div class="project-tile">
+                <a href="https://www.freecodecamp.org/espanol/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page" target="_blank">
+                    <p>Documentación de SO</p>
+                    <img src="https://i.postimg.cc/FKmFh5L2/Sistemas-Operativos.png" alt="Documentación de SO">
+                </a>
+            </div>
+            <div class="project-tile">
+                <a href="https://www.freecodecamp.org/espanol/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page" target="_blank">
+                    <p>Landing page</p>
+                    <img src="https://i.postimg.cc/hGrDjy8h/Quilmes-Rock.png" alt="Landing page">
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2>Sobre mi</h2>
+        <p>Soy una persona que cuando se centra , con pasion por desarrollarme continuamente, trabajo mejor vajo presión
+        Soy una persona respetuosa , valoro el trabajo en equipo y comprendo que una buena presentacion y comunicacion es clave
+        para darse a conocer. Ademas tengo un conocimiento en lenguajes como HTML y CSS a nivel intermedio.</p>
+    </section>
+
+    <!--BOTON PARA EL MODAL-->
+    <div class="text-center my-5">
+        <button id="open-modal" class=" btn btn-info">Ver más</button>
+    </div>
+    <!--MODAL-->
+    <div id="custom-modal" class="custom-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Más sobre mí</h3>
+            <p>Busco aprender sobre nuevas tecnologias, adquiriendo conocimientos sobre Bootstrap y JQuery y creando paginas web en grupos.
+Mi objetivo es desarrollarme como desarrollador fullstack y lograr sacar mi titulo de Ingeniero en Informatica en la UNLAM
+            </p>
+        </div>
+    </div>
+    <section id="contact">
+        <h2>Contactame</h2>
+        <p>Si gustan en contactarme para diversos trabajos</p>
+        <div class="contact-link">
+            <a href="mailto:kferllanos@gmail.com" class="contact-detail" target="_blank">
+                Mi Correo
+            </a>
+            <a href="https://www.facebook.com/share/1ETtEpvZcJ/" class="contact-detail" target="_blank">
+                Mi Facebook
+            </a>
+            <a href="tel:+541151467819" class="contact-detail">
+                Mi telefono
+            </a>
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 Mi Portafolio</p>
+    </footer>
+    <!--INCORPORACION DEL JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--SCRIP PARA EL MODAL-->
+    <script>
+        $(document).ready(function () {
+            //ABRIR MODAL
+            $("#open-modal").click(function (){
+                $("#custom-modal").fadeIn();
+            });
+            //CERRAR MODAL AL CLICKEAR EN LA x
+            $(".close-modal").click(function (){
+                $("#custom-modal").fadeOut();
+            });
+            //CERRAR MODAL AL CLICKEAR FUERA DE LA VENTANA
+            $(window).click(function (e){
+                if($(e.target).is("#costume-modal")){
+                    $("#custom-modal").fadeOut();
+                    
+                }
+            });
+        });
+    </script>
+    <!--INCORPORACION DEL JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
